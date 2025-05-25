@@ -152,8 +152,6 @@ RC DefaultHandler::create_table(const char *dbname, const char *relation_name, s
   return db->create_table(relation_name, attributes, {});
 }
 
-RC DefaultHandler::drop_table(const char *dbname, const char *relation_name) { return RC::UNIMPLEMENTED; }
-
 Db *DefaultHandler::find_db(const char *dbname) const
 {
   map<string, Db *>::const_iterator iter = opened_dbs_.find(dbname);

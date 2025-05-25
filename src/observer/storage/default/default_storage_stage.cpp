@@ -1,4 +1,4 @@
-#include "handler/default_handler.h"
+#include "storage/default/default_handler.h"
 #include "sql/parser/sql_parser.h"
 #include "sql/executor/command_executor.h"
 
@@ -18,7 +18,7 @@ RC DefaultStorageStage::handle_sql(SQLStageEvent *sql_event)
       snprintf(response, sizeof(response), "%s\n", rc == RC::SUCCESS ? "SUCCESS" : "FAILURE");
       break;
     }
-    // ÆäËû case ¿ÉÒÔ¼ÌÐøÌí¼Ó
+    // ï¿½ï¿½ï¿½ï¿½ case ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     default: rc = RC::UNIMPLEMENTED; snprintf(response, sizeof(response), "Unsupported SQL command.\n");
   }
 
